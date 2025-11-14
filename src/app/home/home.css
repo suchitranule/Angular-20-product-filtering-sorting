@@ -1,0 +1,7 @@
+th {
+  text-align: center; /* Aligns header text to the left */
+}
+
+td {
+  text-align: center; /* Aligns data cell text to the center */
+}

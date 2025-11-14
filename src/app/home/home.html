@@ -1,0 +1,31 @@
+<div>
+    <table border="1" cellspacing="10" width="100%">
+        <thead>
+            <tr>
+                <th (click)="sortColumn('id')">Id </th>
+                <th (click)="sortColumn('title')">Name</th>
+                <th (click)="sortColumn('description')">Description</th>
+                <th (click)="sortColumn('price')">Price</th>
+                <th>Category &nbsp;&nbsp;
+                    <select (change)="onCategoryChange($event)">
+                        <option ngValue="All">All</option>
+                        <option ngValue="beauty">beauty</option>
+                        <option ngValue="fragrances">fragrances</option>
+                        <option ngValue="furniture">furniture</option>
+                        <option ngValue="groceries">groceries</option>
+                    </select>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td [title]="product.description.length> 68 ? product.description :''">{{product.description | truncate}}</td>
+                <td>Rs.{{product.price}}</td>
+                <td>{{product.category}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
